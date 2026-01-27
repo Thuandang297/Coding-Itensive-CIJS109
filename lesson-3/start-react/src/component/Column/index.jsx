@@ -1,27 +1,35 @@
 import Card from "../Card";
 import "./index.css"
+import { Button } from "antd";
+import { PlusOutlined, EllipsisOutlined } from "@ant-design/icons";
 
 const Column = (props) => {
     const { columnName, tasksCount, tasks } = props;
-    return <>
+    
+    return (
         <div className="column-component">
-            <div className="header">
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '21px' }}>
-                    <p>{columnName}</p>
-                    <div className="count-task">
-                        <p>{tasksCount}</p>
-                    </div>
+            <div className="column-header">
+                <div className="column-title-section">
+                    <h2 className="column-title">{columnName}</h2>
+                    <span className="column-count">{tasksCount}</span>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'row', gap:'6px' }}>
-                    <div className="count-task">
-                        +
-                    </div>
-                    <div className="count-task">
-                        ...
-                    </div>
+                <div className="column-actions">
+                    <Button 
+                        type="text" 
+                        size="small" 
+                        icon={<PlusOutlined />}
+                        className="column-action-btn"
+                    />
+                    <Button 
+                        type="text" 
+                        size="small" 
+                        icon={<EllipsisOutlined />}
+                        className="column-action-btn"
+                    />
                 </div>
             </div>
-            <div className="content">
+            
+            <div className="column-content">
                 {tasks.map(item => (
                     <Card
                         key={item.taskId}
@@ -34,6 +42,7 @@ const Column = (props) => {
                 ))}
             </div>
         </div>
-    </>
+    )
 }
+
 export default Column;

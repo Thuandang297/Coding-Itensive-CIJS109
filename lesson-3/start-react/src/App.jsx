@@ -5,16 +5,14 @@ import './App.css'
 
 function App() {
   return (
-    <>
-      
+    <div className="app-container">
       <SearchArea />
       <div className="board-content">
         {
           taskStatus.map(task => <Column key={task.statusId} tasks={tasks.filter(item => item.statusId === task.statusId)} columnName={task.name} tasksCount={tasks.filter(item => item.statusId === task.statusId).length} />)
         }
       </div>
-
-    </>
+    </div>
   )
 }
 

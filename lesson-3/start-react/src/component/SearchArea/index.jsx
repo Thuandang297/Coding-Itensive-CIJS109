@@ -1,25 +1,25 @@
-import { InfoCircleOutlined, SearchOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Input, Tooltip } from "antd";
+import { SearchOutlined } from '@ant-design/icons';
+import { Button, Input } from "antd";
+
 const SearchArea = () => {
-    return <>
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: "18px 0px" }}>
-            <Box>
-                
-            </Box>
+    return (
+        <div className="search-area flex align-center justify-space-between">
             <Input
-                className='w-fit'
-                width={'318px'}
-                placeholder="Search Item"
-                prefix={<SearchOutlined />}
-                suffix={
-                    <Tooltip title="Search Item">
-                        <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
-                    </Tooltip>
-                }
+                className='search-input w-max-200'
+                placeholder="Search Items"
+                prefix={<SearchOutlined className="search-icon " />}
+                size="large"
+                allowClear
             />
-            <Button variant='outlined' type="primary">Search</Button>
+            <Button 
+                type="primary"
+                size="large"
+                className="new-item-btn"
+            >
+                New Item
+            </Button>
         </div>
-    </>
+    )
 }
 
 export default SearchArea;
