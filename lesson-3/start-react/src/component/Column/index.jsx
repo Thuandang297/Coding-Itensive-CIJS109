@@ -4,14 +4,14 @@ import { Button } from "antd";
 import { PlusOutlined, EllipsisOutlined } from "@ant-design/icons";
 
 const Column = (props) => {
-    const { columnName, tasksCount, tasks } = props;
+    const { columnName, tasks } = props;
     
     return (
         <div className="column-component">
             <div className="column-header">
                 <div className="column-title-section">
                     <h2 className="column-title">{columnName}</h2>
-                    <span className="column-count">{tasksCount}</span>
+                    <span className="column-count">{tasks.length}</span>
                 </div>
                 <div className="column-actions">
                     <Button 
