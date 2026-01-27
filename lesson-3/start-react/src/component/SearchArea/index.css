@@ -1,7 +1,7 @@
 .search-area {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between; */
+    /* align-items: center; */
     padding: 16px;
     background-color: #ffffff;
     border: 1px solid #e8e8e8;
@@ -12,7 +12,7 @@
 
 .search-input {
     flex: 1;
-    max-width: 450px;
+    max-width: 350px;
 }
 
 .search-input .ant-input {
